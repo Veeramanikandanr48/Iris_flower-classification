@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Flower Prediction App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-bottom: 60px;
+        }
+
+        .banner {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .banner-image {
+            background-image: url('https://repository-images.githubusercontent.com/239420787/dbb97600-55f3-11ea-9db8-845e004cf0cb');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .banner:hover .banner-image {
+            opacity: 0.8;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .banner:hover .banner-text {
+            opacity: 1;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 18px;
+        }
+
+        .flower-section {
+            padding: 50px 0;
+        }
+
+        .flower-card {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+
+        .flower-image {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .flower-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .flower-description {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 30px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Iris Flower Prediction App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/userinput">User Input</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="banner-image"></div>
+        <div class="banner-text">
+            <h1 class="title">Welcome to the Iris Flower Prediction App</h1>
+            <p class="description">This app predicts the species of an iris flower based on its measurements.</p>
+            <a class="btn btn-primary btn-lg" href="/userinput">Predict</a>
+        </div>
+    </div>
+
+    <div class="container flower-section">
+        <h2 class="text-center mb-4">Flower Classification</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="flower-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg" class="flower-image" alt="Iris Setosa">
+                    <h3 class="flower-name">Iris Setosa</h3>
+                    <p class="flower-description">
+                        Iris Setosa is a species of iris native to various regions. It is characterized by its unique color pattern and distinct features.
+                        It is widely recognized for its beauty and has been a subject of fascination for many researchers and enthusiasts.
+                        The Iris Setosa is known for its vibrant colors and delicate petals, making it a popular choice for ornamental purposes.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="flower-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg" class="flower-image" alt="Iris Virginica">
+                    <h3 class="flower-name">Iris Virginica</h3>
+                    <p class="flower-description">
+                        Iris Virginica is a species of iris native to North America. It is known for its elegant appearance and vibrant colors.
+                        The Iris Virginica is characterized by its tall stems and large, showy flowers. It is often found in wetland habitats and is highly valued for its ecological significance.
+                        The Iris Virginica is a symbol of beauty and resilience, representing the natural diversity and richness of the environment.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="flower-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg" class="flower-image" alt="Iris Versicolor">
+                    <h3 class="flower-name">Iris Versicolor</h3>
+                    <p class="flower-description">
+                        Iris Versicolor, also known as the Harlequin Blueflag, is a species of iris native to North America.
+                        It is characterized by its striking colors and unique petal patterns. The Iris Versicolor is often found in wetland areas and is considered an indicator of environmental health.
+                        This flower holds cultural significance in many indigenous communities and is admired for its beauty and adaptability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2023 Iris Flower Prediction App
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

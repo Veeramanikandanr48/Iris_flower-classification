@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-bottom: 60px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #flowerImage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+        }
+
+        #flowerImage img {
+            max-width: 40%;
+        }
+
+        #flowerName {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Iris Flower Prediction App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/userinput">User Input</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Prediction Result</h1>
+        <p>The predicted iris flower is: <span id="prediction"></span></p>
+        <div id="flowerImage"></div>
+        <p id="flowerName"></p>
+        <a href="/userinput" class="btn btn-primary">Go Back</a>
+    </div>
+
+    <div class="footer bg-dark text-white">
+        &copy; 2023 Iris Flower Prediction App
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const prediction = "{{ prediction }}";
+        const flowerImage = document.getElementById("flowerImage");
+        const flowerName = document.getElementById("flowerName");
+
+        if (prediction === "setosa") {
+            flowerImage.innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg" alt="Setosa">';
+            flowerName.innerHTML = '<span class="highlight">Iris Setosa</span>';
+        } else if (prediction === "virginica") {
+            flowerImage.innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Iris_virginica.jpg" alt="Virginica">';
+            flowerName.innerHTML = '<span class="highlight">Iris Virginica</span>';
+        } else if (prediction === "versicolor") {
+            flowerImage.innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Iris_versicolor_3.jpg" alt="Versicolor">';
+            flowerName.innerHTML = '<span class="highlight">Iris Versicolor</span>';
+        } else {
+            flowerImage.innerHTML = '<p>No image available</p>';
+            flowerName.innerText = "";
+        }
+
+        document.getElementById("prediction").innerText = prediction;
+    </script>
+</body>
+</html>
